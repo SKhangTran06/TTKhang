@@ -1,11 +1,11 @@
-﻿# T. T. Khang — Academic website
+# T. T. Khang — Academic website
 
 Responsive, dependency-free HTML/CSS/JavaScript website for GitHub Pages.
 
 ## Preview and customize
 
 Open `index.html` in a browser; no build or installation is required.
-Edit the biography and provisional name in `index.html`. Replace the clearly labeled sample publications and post in `content.js`. Theme and motion live in `styles.css`.
+Edit the biography and provisional name in `index.html`. Edit accepted publications and the sample blog post in `content.js`. Publication abstract summaries are paraphrased from the linked source papers; venue and author details follow the supplied bibliography. Theme and motion live in `styles.css`.
 
 ## GitHub Pages
 
