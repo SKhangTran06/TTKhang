@@ -49,7 +49,9 @@
       else link.removeAttribute('aria-current');
     });
     document.title = `${{home:'Home',publications:'Research',blog:'Blog'}[page]} · T. T. Khang`;
-    if (focus) {
+    if (requested === 'contact') {
+      document.getElementById('contact').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+    } else if (focus) {
       document.querySelector(`#${page} h1`).focus({ preventScroll: true });
       window.scrollTo({ top: 0, behavior: 'instant' });
     }
