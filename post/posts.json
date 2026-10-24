@@ -1,0 +1,8 @@
+[
+  {
+    "number": 1,
+    "topic": "PageAttention and vLLM",
+    "dateTime": "2026-10-24T21:02:28+07:00",
+    "content": "Recently, I have been learning about vLLM and its PagedAttention mechanism, introduced in the paper [Efficient Memory Management for Large Language Model Serving with PagedAttention](https://arxiv.org/pdf/2309.06180). I have also been exploring its [official documentation](https://docs.vllm.ai/en/latest/design/paged_attention/).\n\nI find PagedAttention particularly interesting because of its elegant approach to memory management in LLM serving. Rather than preallocating a large, contiguous region of memory for each incoming request, which can lead to substantial memory waste when the generated sequence is shorter than anticipated, PagedAttention partitions the KV cache into smaller, fixed-size physical blocks. These blocks are allocated dynamically as tokens are generated, while a block table maintains the mapping between logical and physical blocks. This allows memory to be managed more efficiently throughout the decoding process.\n\nAlthough the underlying idea is relatively intuitive, its practical implementation is considerably more involved, as reflected in the [vLLM codebase](https://github.com/vllm-project/vllm). I am particularly interested in viewing LLM serving as a sequential decision-making process and exploring whether ideas from Uncertainty Quantification could be incorporated into scheduling and resource allocation. This is still an early direction of exploration, and I expect both the theoretical formulation and practical implementation to be challenging. Nevertheless, I find the connection between uncertainty, sequential decisions, and efficient LLM serving quite intriguing."
+  }
+]

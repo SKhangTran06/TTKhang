@@ -33,13 +33,6 @@
       return card;
     }));
   }
-  function renderPosts(posts) {
-    document.getElementById('post-list').replaceChildren(...posts.map(post => {
-      const article = el('article', 'post');
-      article.append(el('div', 'meta', `${post.author} / ${post.label}`), el('h2', '', post.title), el('p', 'post-body', post.body), el('span', 'category', post.category));
-      return article;
-    }));
-  }
   function navigate(focus = false) {
     const requested = location.hash.slice(1) || 'home';
     const page = ['home', 'publications', 'blog'].includes(requested) ? requested : 'home';
@@ -56,8 +49,19 @@
       window.scrollTo({ top: 0, behavior: 'instant' });
     }
   }
+  const bell = document.querySelector('.logo');
+  let bellShake;
+  bell.addEventListener('click', () => {
+    bellShake?.cancel();
+    bellShake = bell.animate(
+      [0, -18, 18, -15, 15, -10, 10, -5, 5, 0].map(angle => ({
+        transform: `rotate(${angle}deg)`,
+        transformOrigin: '50% 15%'
+      })),
+      { duration: 1000, easing: 'ease-in-out' }
+    );
+  });
   renderPublications(window.siteContent.publications);
-  renderPosts(window.siteContent.posts);
   window.addEventListener('hashchange', () => navigate(true));
   navigate();
 })();

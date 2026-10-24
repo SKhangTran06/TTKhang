@@ -1,0 +1,9 @@
+{
+  "topic": "Your post topic",
+  "dateTime": "",
+  "_instructions": "Copy this file to Post_2.json (or the next unused positive number). Fill in topic and content. Leave dateTime blank for the first Git commit time, or enter an ISO date/time with timezone. To link words, write [linked words](https://example.com) inside content. Linked words are automatically underlined in every post. This instructions field is not displayed.",
+  "content": [
+    "Write your first paragraph here.",
+    "Write another paragraph here. Add a hyperlink like [official documentation](https://example.com). The linked words will automatically be underlined."
+  ]
+}
